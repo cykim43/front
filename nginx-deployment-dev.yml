@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front-deployment-dev
+  namespace: cyk-dev
+spec:
+  selector:
+    matchLabels:
+     type: front
+ replicas: 1
+ template:
+   metadata:
+     labels:
+       type: front
+   spec:
+    containers:
+    - name: container
+      image: cykim43/front_jenkins:latest
+      ports:
+      - containerPort: 80
