@@ -16,6 +16,7 @@ spec:
       containers:
       - name: container
         image: cykim43/front_jenkins:latest
+        command: ["/bin/sh", "-ec", "envsubst '$BACK_SVC' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
         envFrom:
         - configMapRef:
             name: front-cm
