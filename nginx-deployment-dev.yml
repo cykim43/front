@@ -18,6 +18,6 @@ spec:
         image: cykim43/front_jenkins:latest
         envFrom:
         - configMapRef:
-            name: db-cm
+            name: front-cm
         ports:
         - containerPort: 80
