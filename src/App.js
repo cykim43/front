@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   const [datas, setDatas] = React.useState([]);
   React.useEffect(() => {
-    fetch("http://front-svc.cyk-dev/dev/data", {
+    fetch("http://192.168.87.64/dev/data", {
       method: "GET",
     })
       .then(res => {
